@@ -1,0 +1,36 @@
+
+.poetic_wp_play_lite_stage_data_excel_file {
+
+  .ExcelData {
+
+    padding: 20px 0;
+
+    .Sheet {
+
+      display: table;
+
+      .Title {
+
+        display: table-caption;
+      }
+
+      .Header {
+
+        display: table-header-group;
+      }
+
+      .Row {
+
+        display: table-row;
+      }
+
+      .Cell {
+
+        display: table-cell;
+        border: solid #ccc;
+        border-width: 0 0 1px 0;
+        padding: 10px;
+      }
+    }
+  }
+}

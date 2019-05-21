@@ -1,0 +1,25 @@
+ /* EDITOR */
+
+.editor-styles-wrapper {
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.edit-post-visual-editor .editor-post-title__block {
+
+    margin-bottom: 0;
+
+    &.is-selected {
+
+      margin-top: 50px;
+    }
+}
+
+@media (min-width: 782px) {
+
+  .edit-post-layout__content {
+    
+    min-height: calc(100% - 150px);
+  }
+}
