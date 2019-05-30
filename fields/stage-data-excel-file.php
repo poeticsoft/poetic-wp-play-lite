@@ -92,45 +92,37 @@
     20
   );
 
-  /* Conditional enqueue
+  function poetic_wp_play_lite_stage_data_excel_file_enqueue_admin_files() {
 
-  function poetic_wp_play_lite_stage_data_excel_file_render_scripts_css($field) {
-
-	  echo '<script>console.log("me cargo")</script>' . '<script type="text/javascript" ' .
-            'src="' . plugin_dir_url( __FILE__ )  . 'js/stage-data-excel-file.js"></script>' .
-         '<link rel="stylesheet" ' .
-           'id="poetic_wp_play_lite_stage_data_excel_file_style" ' .
-           'type="text/css" media="all" ' .
-           'href="' . plugin_dir_url( __FILE__ ) . 'css/stage-data-excel-file.css" />';
-  }
-
-  add_action(
-    'acf/render_field/name=poetic_wp_play_lite_stage_data_excel_file',
-    'poetic_wp_play_lite_stage_data_excel_file_render_scripts_css',
-    10,
-    1
-  ); */
-
-  function poetic_wp_play_lite_stage_data_excel_file_enqueue_files() {
-
-    echo'sa-------------------------------------------------' . get_post_type();
+    $Screen = get_current_screen();
+    $ScreenId = $Screen->id;
     
     if(
       is_admin()
+      &&
+      'stage' == $ScreenId
     ) {
 
       wp_enqueue_script(
         'poetic_wp_play_lite_stage_data_excel_file_script', 
         plugin_dir_url( __FILE__ )  . 'js/stage-data-excel-file.js', 
         array(), 
-        '0.0.0',
+        filemtime(plugin_dir_path( __FILE__ )  . 'js/stage-data-excel-file.js'),
         true
+      );
+
+      wp_enqueue_style(
+        'poetic_wp_play_lite_stage_data_excel_file_style',
+        plugin_dir_url( __FILE__ ) . 'css/stage-data-excel-file.css', 
+        array(), 
+        filemtime(plugin_dir_path( __FILE__ )  . 'css/stage-data-excel-file.css'), 
+        'all'
       );	
     }
   }
 
   add_action(
-    'wp_enqueue_scripts',
-    'poetic_wp_play_lite_stage_data_excel_file_enqueue_files'
+    'admin_enqueue_scripts',
+    'poetic_wp_play_lite_stage_data_excel_file_enqueue_admin_files'
   );
 ?>

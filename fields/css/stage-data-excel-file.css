@@ -1,14 +1,14 @@
-.poetic_wp_play_lite_stage_data_excel_file .ExcelData {
+.poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData {
   padding: 20px 0; }
-  .poetic_wp_play_lite_stage_data_excel_file .ExcelData .Sheet {
+  .poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData .Sheet {
     display: table; }
-    .poetic_wp_play_lite_stage_data_excel_file .ExcelData .Sheet .Title {
+    .poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData .Sheet .Title {
       display: table-caption; }
-    .poetic_wp_play_lite_stage_data_excel_file .ExcelData .Sheet .Header {
+    .poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData .Sheet .Header {
       display: table-header-group; }
-    .poetic_wp_play_lite_stage_data_excel_file .ExcelData .Sheet .Row {
+    .poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData .Sheet .Row {
       display: table-row; }
-    .poetic_wp_play_lite_stage_data_excel_file .ExcelData .Sheet .Cell {
+    .poetic_wp_play_lite_stage_data_excel_file .PWPL_ExcelData .Sheet .Cell {
       display: table-cell;
       border: solid #ccc;
       border-width: 0 0 1px 0;

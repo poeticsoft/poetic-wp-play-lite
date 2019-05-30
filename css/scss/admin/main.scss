@@ -1,4 +1,5 @@
- /* EDITOR */
+
+/* EDITOR */
 
 .editor-styles-wrapper {
 
@@ -8,12 +9,29 @@
 
 .edit-post-visual-editor .editor-post-title__block {
 
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    &.is-selected {
+  &.is-selected {
 
-      margin-top: 50px;
-    }
+    margin-top: 50px;
+  }
+}
+
+#wpadminbar {
+  
+  box-sizing: border-box;
+
+  .quicklinks>ul>li>a {
+
+    padding: 0 2em;
+  }
+  
+  .quicklinks .ab-empty-item,
+  .quicklinks a,
+  .shortlink-input {
+  
+    padding: 0 2em;
+  }
 }
 
 @media (min-width: 782px) {

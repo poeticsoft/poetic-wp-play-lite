@@ -7,6 +7,7 @@ module.exports = {
   devtool: debug ? 'inline-sourcemap' : null,
   mode: debug ? 'development' : 'production',
   entry: {
+    'dynamic': './src/js/dynamic_edit.js',
     'stagesection': './src/js/stagesection_edit.js',
     'stagepart': './src/js/stagepart_edit.js'
   },

@@ -8,6 +8,15 @@
   .edit-post-visual-editor .editor-post-title__block.is-selected {
     margin-top: 50px; }
 
+#wpadminbar {
+  box-sizing: border-box; }
+  #wpadminbar .quicklinks > ul > li > a {
+    padding: 0 2em; }
+  #wpadminbar .quicklinks .ab-empty-item,
+  #wpadminbar .quicklinks a,
+  #wpadminbar .shortlink-input {
+    padding: 0 2em; }
+
 @media (min-width: 782px) {
   .edit-post-layout__content {
     min-height: calc(100% - 150px); } }

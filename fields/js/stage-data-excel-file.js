@@ -18,7 +18,6 @@
   */
   // console.log(wp.data.select('core/editor'));
 
-
   let el = wp.element.createElement;
   let postUpdated = true;
   let stageDataExcelChanged = false;
@@ -27,8 +26,6 @@
   let $ExcelData;
 
   wp.data.subscribe(function() {
-
-    // First data load
 
     postid = wp.data.select('core/editor').getCurrentPostId();
 
@@ -78,7 +75,7 @@
       })
     };
 
-    fetch(
+    fetch( 
       '/wp-json/poeticplaylite/get-stage-data',
       config
     )
@@ -97,21 +94,29 @@
 
       } else {
 
-        $ExcelData.append(
+        $ExcelData.html(
           `<div class="Error">
             ${stageJSONData.Status.Reason}
           </div>`
         ); 
       }
-    });
+    }); 
   }
 
-  // List table
+  // UI React components
+
+  function TestComponent(data) {
+      
+    return el(
+      'div', { className: 'Test' },
+      'TEST'
+    );
+  }
 
   function ExcelDataComponent(data) {
       
     return el(
-      'div', { className: 'ExcelData' },
+      'div', { className: 'Sheets' },
       data.Data.map(SheetComponent)
     );
   }
@@ -158,10 +163,9 @@
     )
   }
 
-  /* FIELDS */ 
+  /* Field DOM & Events */ 
 
   let $FieldContainer = $('.poetic_wp_play_lite_stage_data_excel_file');
-  $ExcelData = $FieldContainer.append('<div class="Data"></div>');
 
   $FieldContainer.on(
     'change', 
@@ -170,5 +174,15 @@
       stageDataExcelChanged = true;
     }
   );
+
+  // Data table container
+
+  $ExcelData = $FieldContainer.append(
+    `<div class="PWPL_ExcelData">
+      <div class="Tools"></div>
+      <div class="Data"></div>
+    </div>`
+  )
+  .find('.Data');
   
 });})(jQuery);	
